@@ -1,0 +1,59 @@
+---
+output: html_document
+---
+
+Getting Started with R, RStudio, and Git(hub)
+-------------------------------
+Welcome to **Introduction to R for Data Management and Statistical Biology**
+
+*Before* class begins June 15 at noon you need to install the latest versions of [R (3.2.0)](http://cran.rstudio.com/), [RStudio](http://www.rstudio.com/products/rstudio/#Desk), and [git](http://git-scm.com/downloads).  
+
+
+
+##OS specific instructions
+
+###Windows
+
+**Bash** is a common shell, we'll be using it on day 2 to process batches of files.  You can install both git and bash with [GitBash](https://msysgit.googlecode.com/files/Git-1.8.4-preview20130916.exe) instead of the above git link. 
+
+**Text Editor** I like [Notepad++](http://notepad-plus-plus.org/) but any editor will do.  Note that Word/OO Writer/etc are not appropriate for writing and editing code.
+
+###Mac OSX
+
+**Bash** is your default shell (aka Terminal)
+
+**Text Editor** I like [Text Wrangler](http://www.barebones.com/products/textwrangler/), again any editor will do.
+
+###Linux
+
+**Bash** is you default shell (aka Terminal)
+
+**Text Editor** Which ever editor came with your distro is fine, I usually use gEdit or vim within the shell.
+
+##Communication between RStudio and Git (taken from a [Software Carpentry workshop](http://jennybc.github.io/2014-05-12-ubc/r-setup.html))
+
+Obviously, RStudio can only act as a GUI front-end for Git if Git has been successfully installed and RStudio can find it.
+
+*It would be nice if you did this in advance, but we will also establish this connection Monday if you are having trouble.*
+
+A basic test for successful installation of Git is to simply type git at the shell command line. If you get a complaint about Git not being found it means installation was unsuccessful or that it is not being found, i.e. it is not on your PATH.
+
+If Git appears to be installed, launch RStudio. Quit and re-launch RStudio if there's any doubt in your mind about whether you opened RStudio before or after installing Git.
+
+We will create a new dummy "Project" and direct RStudio to put it under version control
+
+* Do File > New Project.... You should see a pop up [like this](http://www.rstudio.com/images/screenshots/rstudio-projects_new.png).
+* Select "New Directory: Start a project in a brand new working directory".
+* Select "Empty Project: Create a new project in an empty directory".
+* Create a new directory for this project anywhere you wish, perhaps with a name like test. You can delete this very soon.
+* Do Tools > Project Options.... Click on "Git/SVN". Select "Git" in the Version control system dropdown menu. Answer "yes" to the "Confirm New Git Repository" pop up. Answer "yes" to the "Confirm Restart RStudio" pop up.
+* After RStudio re-launches and opens your test Project, the upper left pane should have "Git" tab, typically along with "Environment", "History", etc. You can see an example in [this screenshot](http://www.rstudio.com/images/screenshots/rstudio-vcs.png).
+* If this has gone well, it looks like Git and RStudio are ready to work together! Feel free to quite RStudio and delete the test directory/Project.
+
+In some circumstances, it may be necessary to explicitly tell RStudio where to find the Git executable.
+
+* Do RStudio > Preferences or, alternatively, do Tools > Global Options....
+* Click on "Git/SVN".
+* Fill in the Git executable field correctly. Here is a screenshot of someone doing this on a Windows machine.
+* If you think Git has been installed but you're not sure where it is, entering ```which git``` at the bash command line should reveal the path to the Git executable.
+
