@@ -53,8 +53,8 @@ objectName <- values
 
 - There are lots of [keyboard shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts) to make your life easier
     + ctrl + Enter sends commands from Editor to Console
-    + ctrl + `1` sends curser to Editor
-    + ctrl + `2` sends curser to Console
+    + ctrl + `1` sends cursor to Editor
+    + ctrl + `2` sends cursor to Console
 Names matter
 ==================
 incremental: true

@@ -810,9 +810,7 @@ hljs.initHighlightingOnLoad();
 <pre class="fragment"><code>[1] &quot;C:/data/R_module/r.module.june2015.1&quot;
 </code></pre>
 
-<ul>
-<li class="fragment">File names are relative in R, if you move your .Rproj file but none of the rest of the files your project won&#39;t function</li>
-</ul>
+<p class="fragment">File names are relative in R, if you move your .Rproj file but none of the rest of the files your project won&#39;t function</p>
 
 </div>
 
@@ -828,7 +826,10 @@ y &lt;- a + b * x + rnorm(40, sd = sqrt(sigSq))
 (avgX &lt;- mean(x)) # () around the entire line says create avgX and print it
 </code></pre>
 
-<pre class="fragment"><code>[1] 0.574509
+<pre class="fragment"><code>[1] 0.4465962
+</code></pre>
+
+<pre class="fragment"><code class="r">write(avgX, file=&quot;avgX.txt&quot;)
 </code></pre>
 
 </div>
@@ -837,17 +838,112 @@ y &lt;- a + b * x + rnorm(40, sd = sqrt(sigSq))
 <section data-transition="linear" data-transition-speed="default">
 <h3>First plot</h3>
 <div class="mediaInline slideContent" >
-<pre class="fragment"><code class="r">write(avgX, file=&quot;avgX.txt&quot;)
+<pre><code class="r">plot(x, y)
 </code></pre>
 
-<pre class="fragment"><code class="r">plot(x, y)
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAbFBMVEUAAAAAADoAAGYAOjoAOpAAZrY6AAA6ADo6AGY6OmY6OpA6kNtmAABmADpmAGZmOgBmOpBmZmZmtv+QOgCQOjqQZgCQtpCQ29uQ2/+2ZgC2/7a2///bkDrb/9vb////tmb/25D//7b//9v///+/KkBTAAAACXBIWXMAAAsSAAALEgHS3X78AAAJn0lEQVR4nO3dYXvaRhZAYSVtvG3spLt2u2s2bAzm///HRYALtoUR6ErcmXPeL6WPowHrII3AAjUrITXXfgC6DsNDGR7K8FCGhzI8lOGhDA9leCjDQxkeyvBQhocyPJThoQwPZXgow0MZHsrwUIaHMjyU4aEMD2V4KMNDGR7K8FCGhzI8lOGhDA9leCjDQxkeyvBQhocyPJThoQwPZXgow0MZHsrwUIaHMjyU4aEMD2V4KMNDGR7K8FCGhzI8lOGhDA9leCjDQw0J3yizEcMPWFZjMzyU4aEMD2V4KMNDGR7K8FCGhzI8VL7wJ99NVIR04ZuB96p+DA9leKh04Z3jp5EvvCZheCjDQxkeyvBQhocaHH5x09zOmubzjwuW1fUMDf/8cL+arasvvv48e1ld0dDwy+8/Vk+32/++LNPvzO2q5f/tI7b4llv8oQLedx48xy/v2vJz5/hDhPDjLFs4w1PVP8ePtKzGZngow0MZHsrwUIaHMjyU4aEMD2V4KMNDGR7K8FCGhzI8lOGhDA9leCjDQxkeyvBQhocyPJThoQwPZXgow0MZHsrwUIaHMjyU4aEMD2V4KMND1RE+/1fOpFNF+AK+ZCodw0MZHqqK8M7x56sjvM5meKjpwrs7TmWy8B6A5WJ4KMNDZZjjnf2vIMFRvfuCazA8lOGhEoR3jr+GDOHfLufzYAL5wrvnn4ThoQwPNTj84qb59Pjq2rL9lz1yn87xExgavr227PPDbWR4TWFo+G3w2RevJl2YiC1+bf7Lb27xRRk8xy/vbtv/dFxO2vCZ5Tuq1yQMD2V4KMNDGR7K8FCGhzI8lOGhDA9leCjDQxkeyvBQhocyPJThoQwPZXgow0MZHqqg8KOfqY/6KEA54Uf/TB3rQ3slhN9uic321nhpDN//x6Mt+3acZt/lcNjQ54Hh+/94tGXfjnOwuTfvfxJ1R87xfX882rJvx2ne3ez4X52hgPCHW+LrjdLwlysh/Ad3Qdo5xyo7vC42Yfhem6fb8ESmC99rQnbWnorhoQwP5RwP5VE9lOGhDA9leCjDQxkeyvBQhocyPJThoQwPZXgow0NVGd4/8Z1WY3j/qN+D4aGw4enTQY3h+0TF7xWqDN+D4Qf9eLRlO8fzo7GBygkfnMo5fsiPR1v2yHDsVqEMD1VOePzOOdbQ8Mu73aWjP5+4mrTZchm8xbcXj++xrDvqZIbv6pffHnssa/hkpprjDZ/MZAd3zvG5FHRUr0iGhzI8FDK8xxvM8L7CWBkey/DDhyty4iCG95SOFTR8KMNHLhtgqj2w4SOXHW66Hs7xgcsOd+0NMfvTwfBV3v1p1Ya/8iZn+NP/LPk+8TKG7/OvUq+hC2V/PhseyvBQVw+ffp9YqeuH11UYHsrwUIafRL4DmbrDZ1nfCV+6VB0+zfpO80D2DD+FNA9kz/CTyDLn7FUdPuH6bqV4VHWHTylsPzToCWT4yUWFHzZOr/DLuy/xQ59Y+Cq7w0nutaDwq9VT03w68sUXlw59ctnpy090r0FPr0nCr9ovu2ma+8ChTy5bbfgoU8zxi5t2i19+//Hhvz5r6JPLGn5MPef4X3+GD31i4Xrn+Bw8qocyPJThoQwPZXgowx9V9yG+4Y+p/EW94Y8x/EhDZ2f4kYZOzzl+nKF1VYaHMjyU4aEMD2X4caR/SWD4UeR/E8DwozA8lOGp6p/jFzdvLi17xrK6nqHhnx+259o/vT8P1/CZDQ3/cqr9wSn33VeTVi5u8VCD5/jdBeSd4wvjUT2U4aEMD2V4KMNDGR7K8JU79kaa4S9UyDuTR/9MaPjL5P+765bhgxl+nGXTKyW8c3y0Qub4owwPZXgow0MZHsrwUIaHMjyU4aEMX5ue7ywZvjJ930s2fGUMD2V4Kud4fcTwUIaHMjyU4aEMD2V4KMNDGR7K8FCGhzI8lOGhDA9leCjD5zD5ZzANn8L0n7o2fAqGhzI8lXO8pmF4KMNDGR7K8FCGL0/IKwDDFyfmNb/hi2N4KMNTOcfrcoaHMjzU0PC7K4x2XWPU8JkN3uKfH24vXnYapX+z/DiG7+qX3x7fLJPrMuLTn+NQhPrneMN3MjxUTPh51zyfZW2nmXRSAYRXF8ND1T/Hq5PhoQwPZXgow0MZHsrwUIavxLnvTxq+Dmf/RcLwdTA8lOGpnOPVi+GhDF+pU7t+w9fp5MGe4etkeCjDUznHq5PhoQwPZXgow0MZHsrwUIaHMjyU4aEMD2V4KMNDGb4a551uafhanHmCteFrYXgow1M5x6sHw0MZHsrwUIaHMjyU4aEMD2V4KMNDGR7K8FCGhzI8lOGhBodf3DSfHler5XevLVuUoeGfH+43l5c1fGGGht8Gn30xfGEitvi1+S+/Gb4og+f45d3mYoPz/fXjk11NWp08qocyPFRMeK8tWxzDQxkeyjkeyvBQhocyPJThoQwPZXgow0MZHsrwUIaHMjyU4aEMD2V4iLfnQBqeoVm9CWJ4BsNDGZ7KOV4bhocyPJThoQwPZXgow0MZHsrwUIaHMjzUmOGV2Xjhw43wYKhDnhzR8HUOaXjokIaHDml46JCGhw5peOiQZYXXdAwPZXgow0MZHsrwUIaHMjyU4aEMD5Ui/PKu+fXn5tbipmnuY4f8+wpqcUM+P2wuvhk55PoX//zu+m4XWeyuE3e4BjpkCN+GmX9pby2/Pa4W/whYp/sh1+Yhz6WDIWf3q6ePVur5Q7a/+DxiyNXT7gn0ag10yBC+vYjl9nn61D7SWUCm/ZDrTeD3PyLC74fsuOjm0CEXX3/GDDv79O/tr324BrpkCL/5rb+9bOf7WzFDPv/5n5Bd/X7Ixde/Ynb1+yHjtviX2q9X6nsZwre7zb8fY3sB49Ah57cxc/x+yMXN/Wa9Bg55akY+wy78q5XaIUP4wyfn7oKmcUOub8WEfzVk9H6pPbB5ijm6K2iLP5iO2o0pdsj55hzzgGfTwRz/z6DwBwc3J7bPMyzKmePbvfv2ADSq+8GQq6iXcwdDzoJ29Qe/ePgW/2oNdMgQfjfBrR/xdvMMOQZ/GXIV/Dq+HXJ9KybSfsinJuitgc1ouweZ/XW8rsDwUIaHMjyU4aEMD2V4KMNDGR7K8FCGhzI8lOGhDA9leCjDQxkeyvBQhocyPJThoQwPZfit2cdnodfH8FvL7/+N+gxsGQy/M4/4mFVBDL8T8n0MBTH8zuxfqCne8DuLr//7E7XJG36j/VxlyNfaFMPwUIaHMjyU4aEMD2V4KMNDGR7K8FCGhzI8lOGhDA9leCjDQxkeyvBQhof6P0DVYanOJyRTAAAAAElFTkSuQmCC" alt="plot of chunk unnamed-chunk-4"/> </p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+
+<div class="mediaInline slideContent noTitle" >
+<pre><code class="r">plot(x, y)
+abline(a, b, col=&quot;purple&quot;)
 </code></pre>
 
-<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-4"/> </p>
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-5"/> </p>
 
-<pre class="fragment"><code>Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
-  plot.new has not been called yet
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+
+<div class="slideContent noTitle" >
+<pre><code class="r">dev.print(pdf, &quot;practiceLine.pdf&quot;)
 </code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Finding help (part 1)</h3>
+<div class="slideContent" >
+<p><code>?plot</code></p>
+
+<p class="fragment"><code>?abline</code></p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>First script</h3>
+<div class="slideContent" >
+<ul>
+<li class="fragment">If you happy with how that plot looks (you can change lots of aspects but we won&#39;t right now), save the commands as a script.
+
+<ul>
+<li class="fragment">Go into <code>History</code></li>
+<li class="fragment">Highlight the lines you want</li>
+<li class="fragment">Click <code>To Source</code></li>
+<li class="fragment">Save this as practiceLine.R</li>
+</ul></li>
+<li class="fragment">Write yourself (or others) comments to explain what&#39;s going on by typing <code>#</code> </li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Test your first script</h3>
+<div class="slideContent" >
+<ul>
+<li class="fragment">Clear out your workspace
+
+<ul>
+<li class="fragment">rm(list=ls())</li>
+<li class="fragment">and/or restart R (Session -&gt; restart R)</li>
+</ul></li>
+<li class="fragment">Open your project</li>
+<li class="fragment">Execute your practiceLine.R script</li>
+<li class="fragment">Did you recreate everything?</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Importing data</h3>
+<div class="slideContent" >
+<ul>
+<li class="fragment">Download <a href="http://www.stat.ubc.ca/%7Ejenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt">this</a> test dataset</li>
+<li class="fragment">Import into your project</li>
+</ul>
+
+<pre class="fragment"><code class="r">gDat &lt;- read.delim(file=&quot;gapminder.5year.txt&quot;) #read.delim is a special case of read.table, there are many of these and they can make you life much easier.  Read the read.table help
+</code></pre>
+
+<ul>
+<li class="fragment">You can also read the file in directly from the website but this only works with very carefully curated files</li>
+</ul>
+
+<pre class="fragment"><code class="r">gDat &lt;- read.table(file=&quot;http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt&quot;, fill=T)
+</code></pre>
+
+<ul>
+<li class="fragment">What kid of object is gDat?</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Readings for Tomorrow</h3>
+<div class="slideContent" >
+<p><a href="http://www.jstatsoft.org/v59/i10/paper">Tidy Data, Wickham 2014</a></p>
+
+<p><a href="http://library.queensu.ca/ojs/index.php/IEE/article/view/4608/4898">Data sharing, White, et.al. 2013</a></p>
 
 </div>
 
